@@ -1,0 +1,172 @@
+body {
+    font-family: 'work sans', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 0.9;
+    margin: 0;
+    color: black;
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-color: lightpink;
+    background-image:linear-gradient(
+        rgba(222,184,135,0.5),
+      rgba(193,154,107,0.5)
+      ), 
+  url('chrewChai.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  
+  header {
+    text-align: center;
+    margin-top: 4.5rem;
+    padding: 0 0.625rem;
+    margin-bottom: 1.875rem;
+  }
+  
+  /* For the form box */
+  .container {
+    width: 100%;
+    margin: 3.125rem auto 0 auto;
+  }
+  @media (min-width: 576px) {
+    .container {
+      max-width: 540px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+  }
+  
+  p {
+    font-size: 1.15rem;
+    font-family: 'arial', serif;
+  }
+  
+  h1,
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  #description {
+    font-style: italic;
+  }
+  
+  /* For the labels for the checkboxes */
+  label {
+    display: flex; 
+    align-items: center;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem;
+    font-family: 'arial', serif
+  }
+  
+  /* for inpout field of answers */
+  input,
+  button,
+  select,
+  textarea {
+    margin: 0;
+    font-family: 'Arial', serif;
+    font-size: 0.8rem;
+    line-height: inherit;
+  }
+   /* Sizing of words for check and radio boxes */
+  .label-size {
+    font-size: 1rem;
+  }
+  
+  /*FORM */
+  form {
+    background-color: rgba(244, 211, 177, 0.7);
+    padding: 2.5rem 0.625rem;
+    border-radius: 1rem;
+  }
+  
+  @media (min-width: 480px) {
+    form {
+      padding: 2.5rem;
+    }
+  }
+  
+  .form-group {
+    margin: 0 auto 1.25rem auto;
+    padding: 0.25rem;
+  }
+  
+  .form-control {
+    display: block;
+    margin-top: 0.5rem;
+    width: 95%;
+    height: 2.3rem;
+    padding: 0.3rem;
+    color: #495057;
+    border: 2px solid rgba(226, 145, 113, 0.7);
+    border-radius: 0.3rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  
+  .form-control:focus {
+    border-color: #eba074;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(230, 153, 102, 0.4);
+  }
+   
+  /* for the display of the checkboxes to be one ontop of the other, rather than inline */
+  .input-radio,
+  .input-checkbox {
+    display: inline-block;
+    min-height: 1.25rem;
+    min-width: 1.25rem;
+    margin: 0.25rem 0.625rem 0 1.2rem;
+  }
+  
+  /* for smaller font for comment other */
+  .comment {
+    font-size: 1.1rem;
+    margin: 20px 0 10px 5px;
+  }
+  
+  /* textarea */
+  .input-textarea {
+    min-height: 100px;
+    width: 90%;
+    padding: 0.625rem;
+    resize: vertical;
+    border-radius: 5px;
+    border: 2px solid rgba(20, 17, 16, 0.4);
+  }
+  
+  .input-textarea:focus {
+    border-color: #c5c6c5;
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem rgba(81, 82, 82, 0.4);
+  }
+  
+  img {
+    display: inline;
+    width: 25px;
+    margin-left: 5px;
+  }
+  
+  .submit-button {
+    display: block;
+    background-color: #f29dbb;
+    border: 1px solid #edc9af;
+    width: 95%;
+    height: 2.5rem;
+    padding-bottom: 7px;
+    font-size: 1.1em;
+  }

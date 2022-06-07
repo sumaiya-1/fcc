@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chrew Chai Survey</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Bebas+Neue&family=Bree+Serif&family=Lora:wght@600&family=Merriweather:wght@300&family=Oswald&family=Pacifico&family=Red+Hat+Display:ital,wght@1,300&family=Satisfy&family=Work+Sans:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1 id="title">Chrew Chai Survey Form</h1>
+        <p id="description">
+          Thank you for taking the time to give us feedback on our podcast
+        </p>
+      </header>
+      <form id="survey-form">
+        <!-- Name -->
+        <div class="form-group">
+          <label id="name-label" for="name"> Name </label>
+          <input
+            type="text"
+            required
+            placeholder="Enter your name"
+            id="name"
+            name="name"
+            class="form-control"
+          />
+        </div>
+        <!-- Email -->
+        <div class="form-group">
+          <label id="email-label" for="email"> Email </label>
+          <input
+            type="email"
+            required
+            placeholder="Enter your email"
+            id="email"
+            name="email"
+            class="form-control"
+          />
+        </div>
+        <!-- Age -->
+        <div class="form-group">
+          <label id="number-label" for="number"> Age </label>
+          <input
+            type="number"
+            placeholder="Age"
+            id="number"
+            min="10"
+            max="99"
+            name="age"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <p>Gender</p>
+          <select name="gender" id="dropdown" class="form-control">
+            <option disabled selected value>Gender</option>
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <p>How did you come across our podcast?</p>
+          <label class="label-size">
+            <input
+              type="radio"
+              name="found-podcast"
+              value="family/friend"
+              class="input-radio"
+            />Family or Friend
+          </label>
+
+          <label class="label-size">
+            <input
+              type="radio"
+              name="found-podcast"
+              value="social-media"
+              class="input-radio"
+            />Social media
+          </label>
+          <label class="label-size">
+            <input
+              type="radio"
+              name="found-podcast"
+              value="Spotify/apple-music"
+              class="input-radio"
+            />Spotify or Apple music
+          </label>
+
+          <label class="label-size">
+            <input
+              type="radio"
+              name="found-podcast"
+              value="search-engine"
+              class="input-radio"
+            />Search engine
+          </label>
+
+          <label class="label-size">
+            <input
+              type="radio"
+              name="found-podcast"
+              value="other"
+              class="input-radio"
+            />Other
+          </label>
+        </div>
+        <div class="form-group">
+          <p>What topics would you like us to cover?</p>
+          <label class="label-size">
+            <input
+              type="checkbox"
+              name="topic"
+              value="Education"
+              class="input-checkbox"
+            />Education
+          </label>
+          <label class="label-size">
+            <input
+              type="checkbox"
+              name="topic"
+              value="Career"
+              class="input-checkbox"
+            />Career
+          </label>
+          <label class="label-size">
+            <input
+              type="checkbox"
+              name="topic"
+              value="Childhood"
+              class="input-checkbox"
+            />Childhood
+          </label>
+          <label class="label-size">
+            <input
+              type="checkbox"
+              name="topic"
+              value="Travel"
+              class="input-checkbox"
+            />Travel
+          </label>
+          <label class="label-size">
+            <input
+              type="checkbox"
+              name="topic"
+              value="society"
+              class="input-checkbox"
+            />Society issues</label
+          >
+          <label class="label-size">
+            <input
+              type="checkbox"
+              name="topic"
+              value="Culture"
+              class="input-checkbox"
+            />Culture
+          </label>
+          <label class="label-size">
+            <input
+              type="checkbox"
+              name="topic"
+              value="pop-culture"
+              class="input-checkbox"
+            />Pop culture
+          </label>
+          <label class="label-size">
+            <input
+              type="checkbox"
+              name="topic"
+              value="Friends"
+              class="input-checkbox"
+            />Friends
+          </label>
+          <label class="label-size">
+            <input
+              type="checkbox"
+              name="topic"
+              value="Social-media"
+              class="input-checkbox"
+            />Social media</label
+          >
+          <label class="label-size">
+            <input
+              type="checkbox"
+              name="topic"
+              value="other"
+              class="input-checkbox"
+            />Other
+          </label>
+          <p class="comment">If other, comment below:</p>
+          <textarea
+            class="input-textarea"
+            name="topic"
+            placeholder="Enter other topics here..."
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <p>How can we improve?</p>
+          <textarea
+            id="improvement"
+            class="input-textarea"
+            name="improvement"
+            placeholder="Enter your comment here..."
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <button class="submit-button" type="submit" id="submit">
+            Submit Form
+            <img
+              id="header-img"
+              src="https://i.postimg.cc/SKrdcS6Q/tea-cup-1.png"
+            />
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

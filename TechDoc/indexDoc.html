@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> CSS technical documentation </title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="main.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Bebas+Neue&family=Bree+Serif&family=Lora:wght@600&family=Merriweather:wght@300&family=Oswald&family=Pacifico&family=Red+Hat+Display:ital,wght@1,300&family=Satisfy&display=swap" rel="stylesheet">
+  </head>
+  
+  <body>
+    <nav id="navbar">
+      <header> CSS Documentation </header>
+      <ul>
+        <a href="#Introduction_to_css" class="nav-link">
+          <li> Introduction to CSS </li>
+        </a>
+        <a href="#Types_of_styling" class="nav-link">
+          <li> Types of styling </li>
+        </a>
+        <a href="#Color" class="nav-link ">
+          <li> Color </li>
+        </a>
+        <div>
+          <ul>
+            <a href="#Hex_Color_Codes" class="inner-link">
+              <li> Hex Color Codes </li>
+            </a>
+            <a href="#RGB_&_RGBA" class="inner-link">
+              <li> RGB & RGBA </li>
+            </a>
+            <a href="#HSL" class="inner-link">
+              <li> HSL </li>
+            </a>
+          </ul>
+        </div>
+        <a href="#Text" class="nav-link">
+          <li> Text </li>
+        </a>
+        <a href="#Font" class="nav-link">
+          <li> Font </li>
+        </a>
+        <a href="#Backgrounds" class="nav-link">
+          <li> Backgrounds</li>
+        </a>
+        <a href="#Borders" class="nav-link">
+          <li> Borders </li>
+        </a>
+        <a href="#Display" class="nav-link">
+          <li> Display </li>
+        </a>
+        <a href="#Lists" class="nav-link">
+          <li> Lists </li>
+        </a>
+        <a href="#Id's_&_Classes" class="nav-link">
+          <li> ID's & Classes </li>
+        </a>
+        <div>
+          <ul>
+            <a href="#ID's" class="inner-link">
+              <li> ID's </li>
+            </a>
+            <a href="#Classes" class="inner-link">
+              <li> Classes </li>
+            </a>
+          </ul>
+        </div>
+        <a href="#Flexbox" class="nav-link">
+          <li> Flexbox </li>
+        </a>
+        <div>
+          <ul>
+            <a href="#Flex-container" class="inner-link">
+              <li> Flex-container </li>
+            </a>
+            <a href="#Flex-items" class="inner-link">
+              <li> Flex-items</li>
+            </a>
+          </ul>
+        </div>
+        <a href="#Animations" class="nav-link">
+          <li> Animations </li>
+        </a>
+        <a href="#Reference" class="nav-link">
+          <li> Reference </li>
+        </a>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="Introduction_to_css">
+        <header>
+          <h2>Introduction to CSS</h2>
+        </header>
+        <article>
+          <p> CSS (Cascading Style Sheet) is a sheet style language. First created in 1994 by Håkon Wium Lie and released in December 1996. This is a type of language that can be used to describe the presentation of a markup language (HTML). CSS can be used to change the color, font and layout of a web page, aswell as making the web page adaptable to different screen sizes (mobile, tablet, large screens, small screens etc.)
+            Even though CSS is not the only way to style HTML it is the standard for styling. CSS can be used for more complex styling (animations, complex content layouts etc.) which allows for the web page to be structured efficiently.
+          </p>
+          <p> CSS is a client-side language. This means that the browser responds to the users mouse click (when clicking a video or hovering over an image etc). This can be done as the code is already written to initiate the action. </p>
+          <!-- Brief intro into what HTML is -->
+          <ul class="list"> What is HTML?
+            <li class="align"> HTML (HyperText Markup Language) is a language used to define the structure of web content. It is the most basic building block of the web.</li>
+            <li class="align"> HTML elements tell the browser how to display the content. </li>
+            <li class="align"> Using HTML you can define what part of the content is the 'heading', 'paragraph', 'image', 'link' and much more. </li>
+            <li class="align"> HTML can used other lanaguages such as Javascript which makes web pages interactive.</li>
+          </ul>
+        </article>
+      </section>
+      <!-- different ways to style html elements -->
+      <section class="main-section" id="Types_of_styling">
+        <header>
+          <h2> Types of styling </h2>
+        </header>
+        <article>
+          <p> There are three different ways to style a HTML element. These are iniline styling, page-level style and external style sheets. However, before CSS was introduced, HTML had its own style tag which was used to style the elements. </p>
+          <!-- style type 1-->
+          <ul class="list"> In-line styling
+            <li class="align"> In-line styling is used within HTML tags. Works well when trying to test a new style but shouldn’t be first choice of use. </li>
+            <li class="align"> It has priority over page-level and external style sheets. This means if using an in-line style whilst already having a external style sheet in use, the in-line style will overide the styling from the external style sheet for that particual HTML element. </li>
+            <li class="align bullet-point"> Pro - Easy to test a style on a specific element </li>
+            <li class="align bullet-point"> Con - Makes the code look messy and disorganised. Can make it harder to read the code yourself and for other developers. </li>
+          </ul>
+          <!-- style type 2-->
+          <ul class="list"> Page-level style
+            <li class="align"> Defined at the head of the html file and is a clean version of local style (in-line style) as everything is located in one place </li>
+            <li class="align bullet-point"> Pro - Easy to manage as there is no switching between files </li>
+            <li class="align bullet-point"> Con - Increases the HTML file size which can make the web page run slower </li>
+          </ul>
+          <!-- style type 3-->
+          <ul class="list"> External style sheets
+            <li class="align"> Located in CSS files .css and linked to HTML file .html using the link tag in the head of the html file. </li>
+            <li class="align"> Best to use when styling multiple pages as one css file can be used on multiple pages </li>
+            <li class="align bullet-point"> Pro - Makes code look clean and organised, Makes code reusable </li>
+            <li class="align bullet-point"> Con - Not practical for small style defintions, More files to keep track of </li>
+          </ul>
+        </article>
+      </section>
+      <!-- color -->
+      <section class="main-section" id="Color">
+        <header>
+          <h2> Color </h2>
+        </header>
+        <article>
+          <p> Color is an important css style. It is used to help users navigate through the web page easily. It also makes webpage look appealing to users. One of the aspects that attracts a user on the webpage is color. Color can convey different emotions, speak to different target audiences, and communicate action. </p>
+          <p> Below shows how to link a css stylesheet to a html file using the <code>&#x3C;link&#x3E;</code> element: </p>
+          <p class="block-html">
+            &#x3C<span>link rel="stylesheet" href="style.css"</span>&#x3E
+          </p>
+          <p> Below shows how to add color to the body html element: </p>
+          <div class="block-css">
+            <span class="element"> body </span> {
+            <br> &emsp;&emsp;
+            <span> color: </span>red;
+            <br>}
+          </div>
+          <p> This is a very easy way to add color to an element, by just specifying the name of the color. However, this only works for the generic colors. </p>
+  
+          <section class="inner" id="Hex_Color_Codes">
+            <header>
+              <h3> Hex Color Codes </h3>
+            </header>
+            <article>
+              <p> If you want to use a color like <code class="color">Fawn</code>, as it is not one of the generic colors, it will not be dislpayed on the webpage. Therefore, a hex code is used. A hex code is a 6 symbol code accompanied by the # key. Every color has a hex code which is used for styling in css. Where rr (red), gg (green) and bb (blue) are hexadecimal values between 00 and ff (same as decimal 0-255). For example, #ff0000 is displayed as red, because red is set to its highest value (ff) and the others are set to the lowest value (00). To display black, set all values to 00, like this: #000000. To display white, set all values to ff, like this: #ffffff. </p>
+              <div class="block-css">
+                <span class="element"> body </span> {
+                <br> &emsp;&emsp;
+                <span> color: </span>#ffffff; <code class="comment">&emsp;&emsp;&#x3C!-- this hex code is for the color black --&#x3E</code>
+                <br>&emsp;&emsp;
+                <span> background-color: </span>#e5aa70 <code class="comment">&emsp;&emsp;&#x3C!-- this hex code is for the color fawn --&#x3E</code>
+                <br>}
+              </div>
+            </article>
+          </section>
+          <section class="inner" id="RGB_&_RGBA">
+            <header>
+              <h3> RGB & RGBA </h3>
+            </header>
+            <article>
+              <p>RGB stands for red, green, blue. Each parameter (red, green, and blue) defines the intensity of the color between 0 and 255. To display black, set all color parameters to 0, like this: rgb(0, 0, 0). To display white, set all color parameters to 255, like this: rgb(255, 255, 255). </p>
+              <p> RGBA is an extension of RGB color values with an alpha channel - which specifies the opacity for a color. The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all). </p>
+              <p> Both RGB and RGBA are not as commonly used in css for choosing a color but it is a great option to have. </p>
+              <div class="block-css">
+                <span class="element"> body </span> {
+                <br> &emsp;&emsp;
+                <span> color: </span>RGB(73, 31, 28); <code class="comment">&emsp;&emsp;&#x3C!-- this rgb value if for the color Deep chestnut --&#x3E</code>
+                <br> &emsp;&emsp;
+                <span> background-color: </span>RGBA(73, 31, 28, 0.6); <code class="comment">&emsp;&emsp;&#x3C!-- adding 0.6 (alpha value) means the color will be partially transparent --&#x3E </code>
+                <br>}
+              </div>
+            </article>
+          </section>
+          <section>
+            <section class="inner" id="HSL">
+              <header>
+                <h3> HSL </h3>
+              </header>
+              <article>
+                <p> HSL stands for Hue, Saturation and Light. It is a more recent way to work with colors. Unlike hex or RGBA where to use different numbers to define a color, in HSL, Hue can be used to define the colour whilst the second and third parameters are used for the saturation and light levels which are measured in percentages 0 to 100%. </p>
+                <p><strong>Hue</strong> ranges from 0 to 360 on the color wheel. <strong>Saturation</strong> is the amount of grey in a color, 100% being fully saturated (no grey). <strong>Lightness</strong> is the amount of white or black in a color. 0% is black, 100% is white and 50% is the normal color. </p>
+                <div class="block-css">
+                  <span class="element"> body </span> {
+                  <br> &emsp;&emsp;
+                  <span> color: </span>hsl(240, 100%, 50&); <code class="comment">&emsp;&emsp;&#x3C!-- this hsl value if for the color blue--&#x3E</code>
+                  <br>}
+                </div>
+              </article>
+            </section>
+        </article>
+      </section>
+      <section class="main-section" id="Text">
+        <header>
+          <h2> Text </h2>
+        </header>
+        <article>
+          <p> There are several different properties for formatting text. The very basic one which we have learnt in the previous section is color. By adding the color property, you can change the color of the text within that specific element.</p>
+          <p> You can align text by using the <code>text-align:</code> property. This allows for horizontal alignment of a text either, <strong>left</strong>, <strong>right</strong> or <strong>center</strong> of the page. You can also set it to <strong>justify</strong>, which means that each line will be stretched so it has an equal width. Alongside this, you have an option to <code> text-align-last:</code>. This is to set the last line of text and takes the same values as text-align.</p>
+          <p>Another property is <code>text-decoration: </code>. This can be used to set or remove decorations from text. The values for this property are <strong> underline</strong>, <strong> overline</strong>, <strong> line-through</strong> or <strong> none</strong>. </p>
+          <p> <code>text-transform:</code> property allows you to specifiy if you want the text to be <strong>uppercase</strong>, <strong>lowercase</strong> or if you want the first letter of each word to be <strong>capatilize</strong>.
+          <p> There are several different properties which allows for text-spacing. These are <code>text-indent:</code> - used to specify the indentation of the first lineof text. <code>letter-spacing:</code> - space between each letter, <code>word-spacing:</code> - space between each letter, <code>line-height:</code> - space between the lines. </p>
+          <p>A final text property is <code>text-shadow:</code>. This property adds shadow to the text by specifying the horizontal and vertical shadow (px). You can add color to the text shadow by specifying the color after the horizontal and vertical shadow. Moreover, you can specify a blur effect (px) to the shadow which goes before the color and after the vertical shadow value.</p>
+          <div class="block-css">
+            <span class="element"> p </span> {
+            <br> &emsp;&emsp;
+            <span> text-align: </span>center; <code class="comment">&emsp;&emsp;</code>
+            <br>&emsp;&emsp;
+            <span>text-decoration: </span>underline;
+            <br>&emsp;&emsp;
+            <span>text-transform: </span>uppercase;
+            <br>&emsp;&emsp;
+            <span>word-spacing: </span>5px;
+            <br>&emsp;&emsp;
+            <span>text-shadow: </span>1px 2px blue;
+            <br>}
+            <br>
+            <span class="text">All the above values have been applied to this text. </span>
+          </div>
+        </article>
+      </section>
+      <section class="main-section" id="Font">
+        <header>
+          <h2> Font </h2>
+        </header>
+        <article>
+          <p>Choosing the right font for your website is vital. It makes a huge impact on the readers experience on the website. It is crucial to use a font that is easy to read, has the correct color and size as all these factors could be a drawback to readers if not used appropriately. </p>
+          <p>You can choose the type of font you want your text to be in by using <code>font-family:</code>. There are 5 main font-families which can be used in CSS and these are serif, sans-serif, monospace, cursive and fantasy. All the font names belong to one of these generic font-families. When choosing a font, it is best to put your main font in " " and have a fallback font (generic family) which is not within quotation marks. Doing this allows for maximum compatibility between browsers. Also as not every font can be found by the web so having a fallback font ensures that your text has a font which can be used and shown on the browser. </p>
+          <p>Font styling is another way to make your text appeal to the readers. The <code>font-style:</code> property takes three values <strong>normal</strong> - text shown normally, <strong>oblique</strong> - text is leaning and <strong>italic</strong> - text is in italics.</p>
+          <p>You can make your font bold by using the <code>font-weight:</code> property. This property takes values <strong> normal, bold, bolder, lighter</strong> as well as numbers 100 to 900 (in hundreds). 700 is bold and 400 is normal.</p>
+          <p> A very important font property is the <code>font-size:</code>. Being able to define the size of the font is important for web designing. This property takes three different values which all give a similar outcome. You can use <strong>px, em</strong> or <strong>%</strong>. 1em is equal to the current font-size. 16px is the default text size in browsers. You can also use <strong>vw</strong> which stands for viewport width. This means that the font will change according to the size of the viewport. 10vw = 10% of viewport width. </p>
+          <div class="block-css">
+            <span class="element"> p </span> {
+            <br> &emsp;&emsp;
+            <span> font-family: </span>"Papyrus", serif; <code class="comment">&emsp;&emsp;</code>
+            <br>&emsp;&emsp;
+            <span>font-style: </span>italics;
+            <br>&emsp;&emsp;
+            <span>font-weight: </span>bold;
+            <br>&emsp;&emsp;
+            <span>font-size: </span>1.2vw;
+            <br>}
+            <br>
+            <span class="font">All the above values have been applied to this text. </span>
+          </div>
+        </article>
+      </section>
+      <section class="main-section" id="Backgrounds">
+        <header>
+          <h2> Backgrounds </h2>
+        </header>
+        <article>
+          <p>The <code>background:</code> property in css is used to add background effects to the elements. To change the color of the background, you use the <code>background-color:</code> property and use any color (refer to color section) as the value. You can do this to any html element you want. </p>
+          <p>Similar to adding a background color, you can add a <code>background-image:</code>. This can be done by adding the url of the image you would like to use. However, by default the image is set to repeat and therefore, for this not to happen you can use the <code>background-repeat:</code> property and set the value to <strong>no-repeat</strong>. </p>
+          <p>By setting the <code>background-attachment:</code> you can specificy if you want the background to <strong>scroll</strong> as you scroll through the page or stay <strong>fixed</strong> (wont scroll with rest of the page). You can also specifiy the position you want the background image to be on the page by using the <code>background-position:</code> property.</p>
+          <p>Using a shorthand property can make it easier to specify the values you want to give to each background property. This is done by using <code>background:</code> and then specifying each value in this order:
+          <ol class="list">
+            <li>background-color:</li>
+            <li>background-image:</li>
+            <li>background-repeat:</li>
+            <li>background-attachment:</li>
+            <li>background-position:</li>
+          </ol>
+          </p>
+          <div class="block-css">
+            <span class="element"> body </span> {
+            <br> &emsp;&emsp;
+            <span> background: </span>blue url(" ") no-repeat scroll right top;
+            <br>}
+          </div>
+        </article>
+      </section>
+      <section class="main-section" id="Borders">
+        <header>
+          <h2> Borders </h2>
+        </header>
+        <article>
+          <p>The border properties are used to specifiy the style, width and color of an elements border. <code>border-style:</code> can be used to choose what type of styling you want your border to have. There are several options to choose from such as:
+          <ul class="list align">
+            <li>dotted</li>
+            <li>dashed</li>
+            <li>solid</li>
+            <li>double</li>
+            <li>groove</li>
+            <li>hidden</li>
+          </ul>
+          </p>
+          <p>The border width property is used to define the width of the four borders. The width can be set using different units (px, em, cm) or three pre-defined values: thick, medium, thin. Can add color to the border by using the <code>border-color:</code> property and setting the color by name, hex, rgb or hsl.</p>
+          <p>To make it easier and your css code shorter, you can use the shorthand property for this. This can be done by using <code>border:</code> and setting the values in this order:
+          <ol class="list">
+            <li>border-width</li>
+            <li>border-style</li>
+            <li>border-color</li>
+          </ol>
+          </p>
+          <p>To make the border more rounded, you can use the <code>border-radius:</code> property and again use value in px. </p>
+          <div class="block-css">
+            <span class="element"> body </span> {
+            <br> &emsp;&emsp;
+            <span> border: </span>5px double green;
+            <br> &emsp;&emsp;
+            <span> border-radius: </span>6px;
+            <br>}
+            <br>
+            <br>
+            <span class="border">All the above values have been applied here. </span>
+          </div>
+        </article>
+      </section>
+      <section class="main-section" id="Display">
+        <header>
+          <h2> Display </h2>
+        </header>
+        <article>
+          <p> The <code>display:</code> property specifies how an element is dislpayed. Every HTML element has a display which is either <strong>in-line</strong> of <strong>block</strong>.
+          <p> An in-line element takes up as much width as necessary and does not start on a new line. Examples of in-line elements are:
+          <ul class="align">
+            <li>&#x3Cspan&#x3E</li>
+            <li>&#x3C a &#x3E</li>
+            <li>&#x3Cimg&#x3E</li>
+          </ul>
+          </p>
+          <p>A block element always starts on a new line and takes the full width available. Examples of block elements are:
+          <ul class="align">
+            <li>&#x3C div &#x3E</li>
+            <li>&#x3Ch1&#x3E - &#x3Ch6&#x3E </li>
+            <li>&#x3Cp&#x3E</li>
+            <li>&#x3C form &#x3E</li>
+            <li>&#x3Cheader&#x3E</li>
+            <li>&#x3C footer &#x3E</li>
+            <li>&#x3Csection&#x3E</li>
+          </ul>
+          </p>
+          <p>Even though every element has a default display, this can be overriden by changing the display value </p>
+        </article>
+      </section>
+      <section class="main-section" id="Lists">
+        <header>
+          <h2> Lists </h2>
+        </header>
+        <article>
+          <p>In HTML there are 2 types of list, ordered and unordered. The CSS list property allows you to set different items for both list types, use images as markers or add a background color. You can specify the list marker by using <code>list-style-type</code> and setting it to values such as <strong>square, circle, upper-roman</strong> or <strong>lower-alpha</strong>. You can use an image and set it as the marker - <code>list-style-image:</code>.</p>
+          <p>By using the <code>list-style-position:</code> property you can set whether you want the bullet points to be on the <strong>outside</strong> or <strong>inside</strong>.</p>
+          <div class="block-css">
+            <span class="element"> ul </span> {
+            <br> &emsp;&emsp;
+            <span> list-style-type: </span>sqaure;
+            <br> &emsp;&emsp;
+            <span> list-style-position: </span> inside;
+            <br> &emsp;&emsp;
+            <span> list-style-image: </span>url(" ");
+            <br>}
+          </div>
+          <p>The list shorthand property is best to use when trying to declare all the aboce properties for a list. The order of the values are:
+          <ol class="list">
+            <li>list-style-type</li>
+            <li>list-style-position</li>
+            <li>list-style-image</li>
+          </ol>
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Id's_&_Classes">
+        <header>
+          <h2> Id's & Classes </h2>
+        </header>
+        <article>
+          <p>Id's and classes allow you to define predeined chunks of css styling and then use them on HTML elements. These are known as simple CSS selectors.</p>
+          <section class="inner" id="ID's">
+            <header>
+              <h3> ID's </h3>
+            </header>
+            <article>
+              <p>ID = identifier</p>
+              <p>The id element is unique and so can only be used to select one element. To use an id the # should be used followed by a name (chosen by yourself - best to be related to the type of styling you will assign the id). This can then be used within a HTML element and the styling will be applied. Id's are mainly used for javascript or elements that only appear once (header, footer, main).</p>
+              <div class="block-css">
+                <span class="element"> #color</span> {
+                <br> &emsp;&emsp;
+                <span> color: </span>red;
+                <br> &emsp;&emsp;
+                <span> background-color: </span>black;
+                <br>}
+              </div>
+              <br>
+              <div class="block-html">
+                &#x3C<span>body id="color" </span>&#x3E
+                &#x3C<span>/body</span>&#x3E
+              </div>
+            </article>
+          </section>
+          <section class="inner" id="Classes">
+            <header>
+              <h3> Classes </h3>
+            </header>
+            <article>
+              <p>The class element is simiar to the id element in terms of its use for styling html elements. unique and so can only be used to select one element. However, one class can be used for several html elements. To use a class in css, you write a period/fullstop (.) followed by class name (should be related to the styling, as will be easy to remember). You can also use mutiple classes for one element by just specifying the class name within the html elemnt. </p>
+              <div class="block-css">
+                <span class="element"> .color</span> {
+                <br> &emsp;&emsp;
+                <span> color: </span>red;
+                <br> &emsp;&emsp;
+                <span> background-color: </span>black;
+                <br>}
+                <br>
+                <span class="element">.text</span> {
+                <br> &emsp;&emsp;
+                <span> align-text: </span>justify;
+                <br> &emsp;&emsp;
+                <span> text-transform: </span>uppercase;
+                <br>}
+              </div>
+              <br>
+              <div class="block-html">
+                &#x3C<span>p class="color" </span>&#x3E
+                &#x3C<span>/p</span>&#x3E
+                <br>
+                &#x3C<span>section class="color text" </span>&#x3E
+                &#x3C<span>/section</span>&#x3E
+              </div>
+            </article>
+          </section>
+        </article>
+      </section>
+      <section class="main-section" id="Flexbox">
+        <header>
+          <h2> Flexbox </h2>
+        </header>
+        <article>
+          <p>Flexbox layout allows for a flexible responsive layout structure without having to use float or positioning.
+            Before the flexbox layout was introduced, the four layout modes that were used were, inline, block, table (two-dimensional table layout) and positioned (explicit layout of an element).</p>
+          <section class="inner" id="Flex-container">
+            <header>
+              <h3> Flex-container </h3>
+            </header>
+            <article>
+              <p>First the flex container needs to be defined - .container. Then the element should have <code>display: <strong>flex</strong></code>. This turns the container into a flex container. By doing this, it becomes possible to align any children of that element into rows or columns. You can do this by adding a <code>flex-direction:</code> property and setting the value to <strong> row, column, row-reverse</strong> or <strong>column-reverse</strong>. The <strong>row</strong> value stacks the flex items horizontally (left to right) whilst <strong>row-reverse</strong> stacks them from (right to left). The <strong>column</strong> value stacks the flex items vertically (top to bottom) whilst <strong>column-reverse</strong> stacks the items (bottom to top).</p>
+              <p>There are several options on how to align items along the line which is the main axis. Using <code>justify-content:</code>.
+              <ul class="list align">
+                <li>center - align flex items to the center of the container</li>
+                <li>flex-start - align items to the start of the flex container (this is the default alignment)</li>
+                <li>flex-end - align items at the end of the flex container</li>
+                <li>space-between - the first and last item will be pushed to the edge of the container and others items will have space distributed between them</li>
+                <li>space-around - space around every item within the flex container. The space will not be even</li>
+                <li>space-evenly - Even space around all flex items</li>
+              </ul>
+              </p>
+              <div class="block-css">
+                <span class="element">.flex-container </span>{
+                <br> &emsp;&emsp;
+                <span>display: </span>flex;
+                <br> &emsp;&emsp;
+                <span>flex-direction: </span>row;
+                <br> &emsp;&emsp;
+                <span>justify-content: </span>center;
+              </div>
+              <br>
+              <div class="container">
+                <div> 1 </div>
+                <div> 2 </div>
+                <div> 3 </div>
+              </div>
+              <p> The <code>align-items:</code> property is similar to justify-content. Align-items aligns the items along the cross axis. For rows this is vertical and for columns it is vertical. Some of the values for align-items are similar to that of justofy-content:
+              <ul class="list align">
+                <li>flex-start - align items are start of container. Row = top of container / Column = left of container</li>
+                <li>flex-end - align items at end of container. Row = bottom of container / Column = right of container. </li>
+                <li>center - align items in center. Row = vertically / Column = horizontally </li>
+                <li>stretch - stretch items to fill container (is a default value) </li>
+                <li>baseline - aligns items to their baseline. (is a text concept - the lines the letters sit on) </li>
+              </ul>
+              </p>
+              <p>The <code>align-content:</code> property can be used to align the flex lines. There are many values that this property takes:
+              <ul class="list align">
+                <li>center - lines are packed towards the center of the container </li>
+                <li>flex-start - lines are packed to the start of the container </li>
+                <li>flex-end - lines are packed to the end of the container </li>
+                <li>space-between - first and last line pushed to edge of container whilst other items are distributed within the container </li>
+                <li>space-around - lines distributed within the container, with space at the each end </li>
+                <li>space-evenly - lines evenly distributed within the container </li>
+                <li>stretch - default value </li>
+              </ul>
+              </p>
+              <p>Have the <code>flex-wrap:</code> property. This property is used to split the flexitems into mulitple rows or columns. By default a flex container will fit all the flex items together. The values for flex-wrap are:
+              <ul class="list align">
+                <li>wrap - wrap items into multiple lines from top to bottom (rows) or left to right(columns) </li>
+                <li>no-wrap - default setting </li>
+                <li>wrap-reverse - wrap items but in the opposite direction </li>
+              </ul>
+              </p>
+            </article>
+          </section>
+          <section class="inner" id="Flex-items">
+            <header>
+              <h3> Flex-items </h3>
+            </header>
+            <article>
+              <p>The <code>flex-shrink:</code> property is a property used on the flex items rather than the container. This allows the items to shrink if the container to too small for all the items. This property takes numbers as values. The higher the number the more it will shrink. </p>
+              <p> The <code>flex-grow:</code> property is opposite to flex-shrink. It specifies how much a flex-item will grow relative to the other flex items.</p>
+              <p> The <code>flex-basis:</code> property is used to specify the inital size of an item before making adjustments with flex-shrink or flex-grow. The units used for flex-basis are: px, em or %.</p>
+              <p>You can use the flex shorthand property <code>flex:</code> to set the values for flex-grow, flex-shrink and flex-basis (in this order).</p>
+              <p>An <code>order:</code> property can be used to specify which order you want the flex-items to appear in the container. By default the items will appear in the same order as the HTML source.</p>
+              <p> A final property which can be used on the flex items is <code>align-self:</code>. This property allows for aligning of individual flex items. It will override align-items property. Takes the same values as align-items.</p>
+            </article>
+          </section>
+        </article>
+      </section>
+      <section class="main-section" id="Animations">
+        <header>
+          <h2> Animations </h2>
+        </header>
+        <article>
+          <p>Can use CSS to create animations of HTML elements. An animation allows for a gradual change of an element from one style to another. To use CSS animation, a keyframe animation property must first be defined.</p>
+          <p><code>@keyframes</code> rule does not change the appearance of the element but is used to describe each step of change for the animation. To start the @keyframes rule should be given a name e.g <code>@keyframes change-color</code>. Within this you can now specifiy which color you want the element to change to. E.g - From red, To purple. </p>
+          <div class="block-css">
+            <span class="element">@keyframes change-color </span>{
+            <br> &emsp;&emsp;&emsp;
+            <span>from </span>{background-color: red;}
+            <br> &emsp;&emsp;&emsp;
+            <span>to </span>{background-color: purple;}
+            <br>}
+          </div>
+          <p>To bind the keyframes to the element (either use element or class), you use the <strong>animation-name:</strong> property. The name is the same as the name you gave the keyframes rule. This tells the element that there is an animation to be used. You can use the <strong>animation-duration:</strong> property to specify how long the animation should take to complete. Without this property, the animation will not happen. Other properties include:
+          <ul class="list align">
+            <li>animation-iteration-count: - How many times you want the animation to occur. Can set this to "infinite" and the animation will carry on playing. </li>
+            <li>animation-delay: - How long of a delay before animation starts </li>
+            <li>animation-direction: - This can be normal, reverse(animation played backwards), alternate(animation played forward first and then backwards), alternate-reverse(animation played backwards first and then forward). </li>
+          </ul>
+          </p>
+          <div class="block-css">
+            <span class="element">@keyframes change-color </span>{
+            <br> &emsp;&emsp;&emsp;
+            <span>from </span>{background-color: red;}
+            <br> &emsp;&emsp;&emsp;
+            <span>to </span>{background-color: purple;}
+            <br>}
+          </div>
+          <div class="block-css">
+            <span class="element">.box-animation</span>{
+            <br> &emsp;&emsp;&emsp;
+            <span>animation-name: </span>change-color;
+            <br> &emsp;&emsp;&emsp;
+            <span>animation-duration: </span>5s;
+            <br> &emsp;&emsp;&emsp;
+            <span>animation-iteration-count: </span>2;
+            <br> &emsp;&emsp;&emsp;
+            <span>animation-delay: </span>10s;
+            <br>}
+          </div>
+          <br>
+          <div class="box-animation">
+          </div>
+          <p>Shown above, we used keywords "from" and "to" to define how our animation will change. We can also use percent (%) and add as many style as we want with this. Alongside this we can also change the position of the animation at each percent completion.</p>
+          <div class="block-css">
+            <span class="element">@keyframes change-color-position </span>{
+            <br> &emsp;&emsp;
+            <span>0% </span>{background-color: #D0F0CO; left: 0px; top: 0px;}
+            <br> &emsp;&emsp;
+            <span>25% </span>{background-color: #90EE90; left: 200px; top: 0px;}
+            <br> &emsp;&emsp;
+            <span>50% </span>{background-color: #32CD32; left: 200px; top: 200px;}
+            <br> &emsp;&emsp;
+            <span>75% </span>{background-color: #138808; left: 0px; top: 200px;}
+            <br> &emsp;&emsp;
+            <span>100% </span>{background-color: #004225; left: 0px; top: 0px;}
+            <br>}
+          </div>
+          <div class="block-css">
+            <span class="element">.box-animation</span>{
+            <br> &emsp;&emsp;
+            <span>animation-name: </span>change-color;
+            <br> &emsp;&emsp;
+            <span>animation-duration: </span>5s;
+            <br> &emsp;&emsp;
+            <span>animation-iteration-count: </span>infinite;
+            <br>}
+          </div>
+          <br>
+          <div class="box-animation1">
+          </div>
+        </article>
+      </section>
+      <br>
+      <br>
+      <br>
+      <br>
+      <section class="main-section" id="Reference">
+        <header>
+          <h2> Reference </h2>
+        </header>
+        <article>
+          <p> <a href="https://www.w3schools.com/" target="_blank">W3schools </a> website was used for some of the notes. </p>
+        </article>
+      </section>
+    </main>
+    <footer>
+    </footer>
+  </body>
+</html>
